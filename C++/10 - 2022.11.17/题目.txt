@@ -1,0 +1,29 @@
+求销售人员类和工程师的月薪。请抽象出一个基类--员工类，在员工类中声明一个虚函数，用来求月薪，并定义两个成员变量，分别表示销售数量和工作天数。在子类中分别重写求月薪的虚函数。
+
+求圆形和长方形的面积。请抽象出一个公共的基类为抽象类，在其中定义求面积的纯虚函数，并定义两个成员变量，分别表示长方形的长和宽（或表示圆形的半径），派生出子类后，在2个子类中重写求面积的方法。
+
+以指针偏移技术的方式，通过子类对象找到以下2个虚函数的入口地址并调用。（此题请用VC++（任何版本）或CodeBlocks（任何版本）编译，Dev-C++5.11内置编译器对虚函数的实现不一样）
+class Class {
+  virtual void f() { cout << "Class::f" << endl; }
+  virtual void g() { cout << "Class::g" << endl; }
+};
+class SubClass : public Class {
+
+};
+
+以指针偏移技术的方式，通过子类对象找到以下6个虚函数的入口地址并调用。（此题请用VC++（任何版本）或CodeBlocks（任何版本）编译，Dev-C++5.11内置编译器对虚函数的实现不一样）
+class Base1 {
+  virtual void f() { cout << "Base1::f" << endl; }
+  virtual void g() { cout << "Base1::g" << endl; }
+};
+class Base2 {
+  virtual void f() { cout << "Base2::f" << endl; }
+  virtual void g() { cout << "Base2::g" << endl; }
+};
+class Base3 {
+  virtual void f() { cout << "Base3::f" << endl; }
+  virtual void g() { cout << "Base3::g" << endl; }
+};
+class Drive : public Base1, public Base2, public Base3 {
+
+};

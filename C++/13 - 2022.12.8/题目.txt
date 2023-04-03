@@ -1,0 +1,50 @@
+1 将一个整数、小数和字符串分别写入文件，再依次读取后打印输出。
+
+2 将一个一维整型数组写入文件，再读取后打印输出。
+
+3 实例化3个以下类对象，将它们写入文件，再读取后打印输出。
+class Test
+{
+public:
+	int a, b;
+        char c;
+};
+
+4 实例化3个以下球员类对象，将它们按球衣号码写入文件，再读取后打印输出。
+class Player
+{
+public:
+	char* name;
+	char* team;
+        int age;
+	int no;
+};
+
+5 实例化3个以下球员类对象，将它们放入mutlimap（按球衣号码排序），然后依次写入文件，再依次读取后放入vector，按球衣号码打印输出。
+class Player
+{
+public:
+	char* name;
+	char* team;
+        int age;
+	int no;
+};
+
+6 重新实现一个字典程序，能进行英文翻译，并具有提示功能。中英文单词存放在文件中，每次程序打开时，读取这些单词保存在STL容器中，再提供翻译功能。
+
+Dictionary类
+LoadLibrary()//加载字典，从外存到内存
+LookupWord()//查单词，根据输入的英文，给出相应的中文，如果字典里没有，给出最接近的
+InsertWord()//插入一组新单词
+DeleteWord()//删除一组单词
+RestoreLibrary()//重新加载字典
+FreeLibrary()//释放字典
+
+输入"TIGER"和"DOT"后应有的结果：
+find the word "TIGER" -- 老虎
+find the word "DOT" -- 没有该单词 Maybe you want to look for "DOG" -- 狗
+
+
+
+
+

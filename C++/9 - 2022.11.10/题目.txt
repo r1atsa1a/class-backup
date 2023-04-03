@@ -1,0 +1,60 @@
+编写一个MyInt类，内有1个私有数据成员为int x，请在该类中设计如下重载运算符函数。
+operator==
+operator+
+operator=
+operator++
+
+编写一个MyArray类，内有1个私有数据成员为int x[N]，请在该类中设计如下重载运算符函数。
+operator==
+operator+
+operator=
+operator++
+operator[]
+
+编写一个MyMatrix类，内有1个私有数据成员为int x[M][N]，请在该类中设计如下重载运算符函数。
+operator!=
+operator-
+operator=
+operator--
+
+设计一个三角形类Triangle，包含三角形三条边长的私有数据成员，另有一个重载运算符“+”，以实现求两个三角形对象的面积之和。并能计算任意多个三角形的面积之和。 
+
+设计一个书本类，内有书名，作者，出版社，价格等信息。重载=，==（判断两本书是否一样），++（书本的价格加1元），<<（打印书本信息）
+
+设计一个点类Point，实现点对象之间的各种运算。 
+= + == += 前置++ 后置++ <<
+
+编写一个类似string类的String类,类的声明如下：
+class String 
+{
+public:
+	// 构造函数的重载
+	String( const char * = 0 );
+	String( const String & );
+	// 析构函数
+	~String();
+	// 赋值操作符+的重载
+	String operator+( const String & );
+	String operator+( const char * );
+	// 赋值操作符=的重载
+	String& operator=( const String & );
+	String& operator=( const char * );
+	// 重载的下标[]操作符
+	char& operator[]( int ) const;
+	// 等于操作符==的重载集合
+	bool operator==( const char * ) const;
+	bool operator==( const String & ) const;
+	// 重载<< ，>>
+	friend ostream& operator<<( ostream &, const String & );
+	friend istream& operator>>( istream &is, String &s);
+	// 接口
+	int size() { return _size; }
+	char* c_str() { return _string; }
+private:
+	int _size;
+	char *_string;
+};
+
+
+
+
