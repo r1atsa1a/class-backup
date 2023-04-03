@@ -144,15 +144,17 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
             DEFAULT_PITCH | FF_DONTCARE,
             "描述字体" );
         
+        hPen = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
+        SelectObject(hdc, hPen);
+        
         score = 0;
         for (int i = 0; i < ROW * COL; i++) {
             if (!bricks[i].vis) {
-                hPen = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
+                
                 hBrush = (HBRUSH)CreateSolidBrush(bricks[i].color);
-                SelectObject(hdc, hPen);
+                
                 SelectObject(hdc, hBrush);
                 Rectangle(hdc, bricks[i].x - bricks_width, bricks[i].y - bricks_height, bricks[i].x + bricks_width, bricks[i].y + bricks_height);
-                DeleteObject(hPen);
                 DeleteObject(hBrush);
             } else score ++;
         }
@@ -165,12 +167,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
             table_x = min(DEFAULT_WIDTH - table_width - 2, table_x + table_v);
             table_right = false;
         }
-        hPen = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
         hBrush = (HBRUSH)CreateSolidBrush(RGB(0, 0, 205));
-        SelectObject(hdc, hPen);
         SelectObject(hdc, hBrush);
         Rectangle(hdc, table_x - table_width, DEFAULT_HEIGHT - 2 * table_height - 42, table_x + table_width, DEFAULT_HEIGHT - 42);
-        DeleteObject(hPen);
         DeleteObject(hBrush);
         
         if (won == true) {
@@ -236,12 +235,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
             return 0;
         }
         
-        hPen = CreatePen(PS_SOLID, 1, RGB(255, 255, 255));
         hBrush = (HBRUSH)CreateSolidBrush(RGB(0, 255, 0));
-        SelectObject(hdc, hPen);
         SelectObject(hdc, hBrush);
         Ellipse(hdc, ball_x - ball_radius, ball_y - ball_radius, ball_x + ball_radius, ball_y + ball_radius);
-        DeleteObject(hPen);
         DeleteObject(hBrush);
         
         if (ball_x >= table_x - table_width - ball_radius && ball_x <= table_x + table_width + ball_radius
