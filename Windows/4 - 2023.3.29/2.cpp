@@ -23,39 +23,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) 
         break;
         
     case WM_CHAR:
-        switch (wParam) {
-        case '0':
-            inum = 0;
-            break;
-        case '1':
-            inum = 1;
-            break;
-        case '2':
-            inum = 2;
-            break;
-        case '3':
-            inum = 3;
-            break;
-        case '4':
-            inum = 4;
-            break;
-        case '5':
-            inum = 5;
-            break;
-        case '6':
-            inum = 6;
-            break;
-        case '7':
-            inum = 7;
-            break;
-        case '8':
-            inum = 8;
-            break;
-        case '9':
-            inum = 9;
-            break;
-        }
+        inum = wParam - '0';
         break;
+        
     case WM_PAINT:
         GetClientRect(hwnd, &rect);
         hdc     = BeginPaint (hwnd, &ps);
